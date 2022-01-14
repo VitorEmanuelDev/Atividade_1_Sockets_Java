@@ -25,10 +25,10 @@ public class Servidor {
 			entrada = new DataInputStream(socket.getInputStream());
 			saida = new DataOutputStream(socket.getOutputStream());
 
-			//Recebimento do valor inteiro
+			//Recebimento do valor
 			String CPF = entrada.readUTF();
 
-			//Verificação do CPF
+			//Verificação do valor para saber se corresponde a um CPF
 			System.out.println("\nResultado: ");
 			// usando os metodos isCPF() e imprimeCPF() da classe "ValidaCPF"
 			if (ValidaCPF.isCPF(CPF) == true)
@@ -36,7 +36,6 @@ public class Servidor {
 			else 
 				System.out.println("Erro, CPF invalido !!!\n");
 
-			//Envio dos dados		
 			socket.close();
 
 		} catch(Exception e) {
@@ -44,9 +43,5 @@ public class Servidor {
 		}
 
 	}
-
-
-
-
 
 }
