@@ -39,7 +39,7 @@ public class Cliente {
             socket.close();
             
         } catch(Exception e) {
-            
+            e.printStackTrace();
         }
         
     }

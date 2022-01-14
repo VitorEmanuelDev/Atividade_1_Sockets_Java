@@ -29,18 +29,18 @@ public class Servidor {
 			String CPF = entrada.readUTF();
 
 			//Verificação do CPF
-			System.out.printf("\nResultado: ");
+			System.out.println("\nResultado: ");
 			// usando os metodos isCPF() e imprimeCPF() da classe "ValidaCPF"
 			if (ValidaCPF.isCPF(CPF) == true)
 				saida.writeUTF(ValidaCPF.imprimeCPF(CPF));//Envio dos dados
 			else 
-				System.out.printf("Erro, CPF invalido !!!\n");
+				System.out.println("Erro, CPF invalido !!!\n");
 
 			//Envio dos dados		
 			socket.close();
 
 		} catch(Exception e) {
-
+			e.printStackTrace();
 		}
 
 	}
